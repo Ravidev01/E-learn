@@ -4,6 +4,7 @@ const cors = require("cors");
 const dbConfig = require("../server/config/db.config");
 
 const authRouter = require("./router/auth.route");
+const courseRouter = require('./router/courses.routes')
 
 
 const app = express();
@@ -33,7 +34,7 @@ require('./config/middleware.config')(app)
 require('./config/passport.config')(app)
 
 app.use('/api', authRouter);
-
+app.use('/api/courses',courseRouter);
 // require('./router/auth.route')
 
 module.exports = app

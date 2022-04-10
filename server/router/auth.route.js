@@ -27,7 +27,7 @@ router.post(
       .custom((value) => {
         return User.findOne({ email: value }).then((user) => {
           if (user) {
-            return Promise.reject("Email in use");
+            return Promise.reject("E-mail already in use");
           }
         });
         // body('email').custom(value => {
