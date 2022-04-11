@@ -8,8 +8,8 @@ const User = require('../module/user.model');
 module.exports = app => {
     app.use(session({
         secret: "eLearning",
-        resave: false,
-        saveUninitialized: false
+        resave: true,
+        saveUninitialized: true
     }))
 
     passport.serializeUser((user, next) => next(null, user._id))
