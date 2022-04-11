@@ -1,4 +1,3 @@
-const session = require("express-session");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy
@@ -6,7 +5,7 @@ const flash = require("connect-flash");
 const User = require('../module/user.model');
 
 module.exports = app => {
-    app.use(session({
+    app.use(require("express-session")({
         secret: "eLearning",
         resave: true,
         saveUninitialized: true

@@ -4,7 +4,6 @@ const { check , validationResult } = require('express-validator');
 const Course = require ('../module/course.model');
 
 const{ isLoggedIn , isTeacher , isValidId } = require("../middleware/custom-middleware");
-const { response } = require('express');
 
 router.get('/sampleCourse',(req,res)=>{
     Course.aggregate([{$sample:{ size:8}}])
@@ -44,7 +43,7 @@ router.post('/newCourse', isLoggedIn, isTeacher,
 
         check('lead').isLength({ min: 5 }).withMessage('Enter any lead paragraph field'),
 
-        check('description').isLength({ min: 20 }).withMessage('Write a few words that describe your course'),
+        check('description').isLength({ min: 10 }).withMessage('Write a few words that describe your course'),
 
         check('whatYouWillLearn').isLength({ min: 5 }).withMessage('Include some topics'),
         
@@ -63,7 +62,11 @@ router.post('/newCourse', isLoggedIn, isTeacher,
         res.status(400).json({ message: passCheck.errors })
         return
     }
-
+    const { imageUrl, title, lead, category, difficultyLevel, description, whatYouWillLearn, price, duration, requirements, videos, owner } = req.body
+    
+    const mainTopicsArr = whatYouWillLearn.split(',').map(elm => elm.charAt(0).toUpperCase() + elm.substring(1))
+    const requirementsArr = requirements.split(',').map(elm => elm.charAt(0).toUpperCase() + elm.substring(1))
+    const videosArr = videos.split(',')
     Course
     .create({
         imageUrl,

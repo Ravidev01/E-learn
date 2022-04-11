@@ -1,5 +1,10 @@
 const express = require("express");
 const cors = require("cors");
+const app = express();
+
+var cookieParser = require('cookie-parser')
+
+app.use(cookieParser())
 
 const dbConfig = require("../server/config/db.config");
 
@@ -9,7 +14,6 @@ const teachersRouter = require('./router/teachers.routes');
 const usersRouter = require('./router/users.routes');
 
 
-const app = express();
 app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 6000;
