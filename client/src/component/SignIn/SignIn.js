@@ -16,12 +16,11 @@ const SignIn = () => {
     <div className="Container">
       {/* showing the success message after Successful sign in */}
       <form onSubmit={handleSubmit}>
-        <Grid>
-          <Paper elevation={10} className="paperStyle">
+        <div className="container">
+          <Paper elevation={20} className="paperStyle">
             <Grid align="center">
               <Avatar className="avatarStyle">H</Avatar>
               <h2>Sign in</h2>
-              {/* <p className={classes.errormessage}>{formError.email}</p> */}
               <TextField
                 className="textFiled"
                 value={input.username}
@@ -32,7 +31,6 @@ const SignIn = () => {
                 variant="outlined"
                 onChange={(e) => setInput({ username: e.target.value })}
               />
-              {/* <p className={classes.errormessage}>{formError.password}</p> */}
               <TextField
                 className="textFiled"
                 value={input.password}
@@ -57,12 +55,13 @@ const SignIn = () => {
             <Link to="/" className="frLink">
               Forgot password ?
             </Link>
-            Don't have an account ?
+           <div style={{margin:"25px"}}>Don't have an account ?
             <Link className="sgnLink" to="/signup">
               Sign up
             </Link>
+           </div> 
           </Paper>
-        </Grid>
+        </div>
       </form>
     </div>
   );

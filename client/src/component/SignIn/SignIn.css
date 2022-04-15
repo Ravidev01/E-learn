@@ -1,6 +1,6 @@
 .paperStyle{
     padding: 10px;
-    height: 60vh;
+    height: 70vh;
     width: 300px;
     margin: 30px auto;
   }
@@ -8,14 +8,14 @@
     background: #17a7d2;
   }
 .textFiled{
-    margin-bottom: 15;
+    margin-bottom: 15px !important;
   }
 .btnStyle{
-    margin: 8px 0 ;
+    margin: 20px 0 9px 0 !important;
   }
 .frLink{
-    margin-top: 8px;
-    margin-left: 50%;
+    margin-bottom: 20px !important ;
+    margin-left: 60%;
     text-decoration: 0;
   }
   .sgnLink{
