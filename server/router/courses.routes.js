@@ -5,7 +5,7 @@ const Course = require ('../module/course.model');
 
 const{ isLoggedIn , isTeacher , isValidId } = require("../middleware/custom-middleware");
 
-router.get('/sampleCourse',(req,res)=>{
+router.get('/sampleCourses',(req,res)=>{
     Course.aggregate([{$sample:{ size:8}}])
     .then (response=>res.json(response))
     .catch(err => res.status(500).json(err))
@@ -22,6 +22,7 @@ router.get('/getAllCourses', (req, res) => {
 router.get('/getTeacherCourses/:id', isValidId, (req, res) => {
     Course
         .find({ owner: req.params.id })
+        .populate('owner')
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })

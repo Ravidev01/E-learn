@@ -1,0 +1,35 @@
+.paperStyle{
+    padding: 10px;
+    height: 60vh;
+    width: 300px;
+    margin: 30px auto;
+  }
+.avatarStyle {
+    background: #17a7d2;
+  }
+.textFiled{
+    margin-bottom: 15;
+  }
+.btnStyle{
+    margin: 8px 0 ;
+  }
+.frLink{
+    margin-top: 8px;
+    margin-left: 50%;
+    text-decoration: 0;
+  }
+  .sgnLink{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 10px;
+    text-decoration: 0;
+  }
+  .txtDont{
+    margin-top: 20px;
+    text-align: center;
+  }
+  .errorMessage {
+    margin: 1px;
+    color: red;
+    margin-left: 1;
+  }
