@@ -1,12 +1,18 @@
 .paperStyle{
     padding: 10px;
-    height: 70vh;
+    height: auto;
     width: 300px;
     margin: 30px auto;
   }
 .avatarStyle {
     background: #17a7d2;
   }
+
+.container .css-1wlk0hk-MuiAvatar-root{
+  height: 50px;
+  width: 50pxF;
+}
+
 .textFiled{
     margin-bottom: 15px !important;
   }

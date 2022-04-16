@@ -43,7 +43,7 @@ const SignIn = () => {
         <div className="container">
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
-              <Avatar className="avatarStyle">H</Avatar>
+              <Avatar className="avatarStyle"src= {loginImage}/>
               <h2>Sign in</h2>
               <TextField
                 className="textFiled"

@@ -8,6 +8,7 @@ import { Link,useNavigate } from "react-router-dom";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
+import signUpImage from "../../Assets/signUpImage.svg";
 import Select from "@mui/material/Select";
 import axios from "axios";
 
@@ -56,7 +57,7 @@ const SignUP = () => {
         <div className="container">
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
-              <Avatar className="avatarStyle">MM</Avatar>
+              <Avatar className="avatarStyle" src={ signUpImage } />
               <h2>Sign up</h2>
               <TextField
                 className="textFiled"
