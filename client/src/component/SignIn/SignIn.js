@@ -5,6 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
+import loginImage from "../../Assets/loginImage.svg"
 import "../SignIn/SignIn.css";
 import axios from "axios";
 
@@ -40,7 +41,7 @@ const SignIn = () => {
         <div className="container">
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
-              <Avatar className="avatarStyle">H</Avatar>
+              <Avatar className="avatarStyle"src= {loginImage}/>
               <h2>Sign in</h2>
               <TextField
                 className="textFiled"

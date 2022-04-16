@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
+import signUpImage from "../../Assets/signUpImage.svg";
 import Select from "@mui/material/Select";
 
 import "../SignIn/SignIn.css";
@@ -31,7 +32,7 @@ const SignUP = () => {
         <div className="container">
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
-              <Avatar className="avatarStyle">MM</Avatar>
+              <Avatar className="avatarStyle" src={ signUpImage } />
               <h2>Sign up</h2>
               <TextField
                 className="textFiled"
@@ -52,9 +53,7 @@ const SignUP = () => {
                 label="Email*"
                 type="email"
                 variant="outlined"
-                onChange={(e) =>
-                  setInput({ ...input, email: e.target.value })
-                }
+                onChange={(e) => setInput({ ...input, email: e.target.value })}
               />
               <TextField
                 className="textFiled"
@@ -65,7 +64,9 @@ const SignUP = () => {
                 label="Password*"
                 type="password"
                 variant="outlined"
-                onChange={(e) => setInput({ ...input, password: e.target.value })}
+                onChange={(e) =>
+                  setInput({ ...input, password: e.target.value })
+                }
               />
               <FormControl sx={{ m: 0, minWidth: 300 }} size="medium">
                 <InputLabel id="demo-select-small">Role*</InputLabel>
