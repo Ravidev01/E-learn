@@ -12,6 +12,7 @@ import axios from "axios";
 const SignIn = () => {
   const navigate = useNavigate()
   const [input, setInput] = useState({ username: "", password: "" });
+  const [errorMessage , setErrorMessage] = useState("")
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input);
@@ -31,40 +32,45 @@ const SignIn = () => {
           },
         }
       )
-      .then((res) =>{
+      .then((res) =>{ 
+        if(res.status !== 200){
+          setErrorMessage(()=>"Invalid Username or Password!")
+        }
          res.status === 200 && navigate('/home')
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setErrorMessage(()=>"Invalid Username or Password!"));
+
   };
 
   return (
     <div className="Container">
       {/* showing the success message after Successful sign in */}
       <form onSubmit={handleSubmit}>
-        <div className="container">
+        <div className="container" > 
+         <div className="errorMessage">{ input.username !=="" &&input.password!==""&&errorMessage}</div>
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
               <Avatar className="avatarStyle"src= {loginImage}/>
               <h2>Sign in</h2>
-              <TextField
+              <TextField required
                 className="textFiled"
                 value={input.username}
                 fullWidth
                 autoComplete="off"
-                name="email"
-                label="Email*"
+                name="username"
+                label="Username"
                 variant="outlined"
                 onChange={(e) =>
                   setInput({ ...input, username: e.target.value })
                 }
               />
-              <TextField
+              <TextField required
                 className="textFiled"
                 value={input.password}
                 fullWidth
                 autoComplete="off"
                 name="password"
-                label="Password*"
+                label="Password"
                 type="password"
                 variant="outlined"
                 onChange={(e) =>

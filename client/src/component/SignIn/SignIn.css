@@ -1,16 +1,19 @@
 .paperStyle{
     padding: 10px;
     height: auto;
-    width: 300px;
+    width: 350px;
     margin: 30px auto;
   }
 .avatarStyle {
     background: #17a7d2;
   }
-
+.errorMessage{
+  color: red;
+  margin-left: 42%;
+}
 .container .css-1wlk0hk-MuiAvatar-root{
   height: 50px;
-  width: 50pxF;
+  width: 50px;
 }
 
 .textFiled{
@@ -33,9 +36,4 @@
   .txtDont{
     margin-top: 20px;
     text-align: center;
-  }
-  .errorMessage {
-    margin: 1px;
-    color: red;
-    margin-left: 1;
   }

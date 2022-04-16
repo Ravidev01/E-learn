@@ -1,9 +1,15 @@
 .paperStyle{
     padding: 10px;
     height: 90vh !important;
-    width: 300px;
+    width: 350px;
     margin: 30px auto;
   }
+
+  .container .css-1wlk0hk-MuiAvatar-root{
+    height: 50px;
+    width: 50px;
+  }
+  
 .avatarStyle {
     background: #17a7d2;
   }
@@ -28,9 +34,5 @@
     margin-top: 20px;
     text-align: center;
   }
-  .errorMessage {
-    margin: 1px;
-    color: red;
-    margin-left: 1;
-  }
+ 
   
