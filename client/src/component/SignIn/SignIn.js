@@ -6,6 +6,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Link , useNavigate } from "react-router-dom";
 import "../SignIn/SignIn.css";
+import loginImage from "../../Assets/loginImage.svg"
 import axios from "axios";
 
 const SignIn = () => {

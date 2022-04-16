@@ -67,7 +67,7 @@ const SignUP = () => {
                 name="username"
                 label="Username*"
                 variant="outlined"
-                onChange={(e) => setInput({ username: e.target.value })}
+                onChange={(e) => setInput({...input, username: e.target.value })}
               />
               <TextField
                 className="textFiled"
