@@ -4,11 +4,12 @@ import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import "../SignIn/SignIn.css";
 import axios from "axios";
 
 const SignIn = () => {
+  const navigate = useNavigate()
   const [input, setInput] = useState({ username: "", password: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +30,9 @@ const SignIn = () => {
           },
         }
       )
-      .then((res) => console.log(res))
+      .then((res) =>{
+         res.status === 200 && navigate('/home')
+      })
       .catch((err) => console.log(err));
   };
 

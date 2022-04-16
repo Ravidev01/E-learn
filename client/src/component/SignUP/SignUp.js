@@ -4,24 +4,49 @@ import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import axios from "axios";
 
 import "../SignIn/SignIn.css";
 
 const SignUP = () => {
-  const [input, setInput] = useState({ username: "", email: "", password: "" });
+  const navigate = useNavigate()
+  const [input, setInput] = useState({
+    username: "",
+    email: "",
+    password: ""
+   
+  });
   const [role, setRole] = React.useState("");
 
   const handleChange = (event) => {
     setRole(event.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log(input);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(input,role);
+    postData();
+  };
+
+  const postData = () => {
+    axios.post(
+      "http://localhost:4000/api/signup",
+      {
+        username: input.username,
+        email: input.email,
+        password: input.password,
+        role:role,
+      },
+      { headers: { "Content-Type": "application/json" } }
+    )
+    .then((res)=>{
+      res.status === 200 && navigate('/signin')
+    }).catch((err) =>console.log(err))
   };
 
   return (
@@ -52,9 +77,7 @@ const SignUP = () => {
                 label="Email*"
                 type="email"
                 variant="outlined"
-                onChange={(e) =>
-                  setInput({ ...input, email: e.target.value })
-                }
+                onChange={(e) => setInput({ ...input, email: e.target.value })}
               />
               <TextField
                 className="textFiled"
@@ -65,7 +88,9 @@ const SignUP = () => {
                 label="Password*"
                 type="password"
                 variant="outlined"
-                onChange={(e) => setInput({ ...input, password: e.target.value })}
+                onChange={(e) =>
+                  setInput({ ...input, password: e.target.value })
+                }
               />
               <FormControl sx={{ m: 0, minWidth: 300 }} size="medium">
                 <InputLabel id="demo-select-small">Role*</InputLabel>
