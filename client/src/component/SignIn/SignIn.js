@@ -6,12 +6,33 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import "../SignIn/SignIn.css";
+import axios from "axios";
 
 const SignIn = () => {
   const [input, setInput] = useState({ username: "", password: "" });
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(input);
+    postData();
   };
+  const postData = async () => {
+    axios
+      .post(
+        "http://localhost:4000/api/login",
+        {
+          username: input.username,
+          password: input.password,
+        },
+        {
+          header: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="Container">
       {/* showing the success message after Successful sign in */}
@@ -29,7 +50,9 @@ const SignIn = () => {
                 name="email"
                 label="Email*"
                 variant="outlined"
-                onChange={(e) => setInput({ username: e.target.value })}
+                onChange={(e) =>
+                  setInput({ ...input, username: e.target.value })
+                }
               />
               <TextField
                 className="textFiled"
@@ -40,7 +63,9 @@ const SignIn = () => {
                 label="Password*"
                 type="password"
                 variant="outlined"
-                onChange={(e) => setInput({ password: e.target.value })}
+                onChange={(e) =>
+                  setInput({ ...input, password: e.target.value })
+                }
               />
             </Grid>
             <Button
@@ -52,14 +77,15 @@ const SignIn = () => {
             >
               Sign in
             </Button>
-            <Link to="/" className="frLink">
+            <Link to="/signin" className="frLink">
               Forgot password ?
             </Link>
-           <div style={{margin:"25px"}}>Don't have an account ?
-            <Link className="sgnLink" to="/signup">
-              Sign up
-            </Link>
-           </div> 
+            <div style={{ margin: "25px" }}>
+              Don't have an account ?
+              <Link className="sgnLink" to="/signup">
+                Sign up
+              </Link>
+            </div>
           </Paper>
         </div>
       </form>
