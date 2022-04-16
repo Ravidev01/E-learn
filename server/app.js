@@ -16,7 +16,7 @@ const usersRouter = require('./router/users.routes');
 
 app.use(express.json());
 app.use(cors());
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 4000;
 
 //Db connection
 
