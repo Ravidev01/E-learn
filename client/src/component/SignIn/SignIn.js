@@ -36,7 +36,7 @@ const SignIn = () => {
         if(res.status !== 200){
           setErrorMessage(()=>"Invalid Username or Password!")
         }
-         res.status === 200 && navigate('/')
+         res.status === 200 && navigate('/home')
       })
       .catch((err) => setErrorMessage(()=>"Invalid Username or Password!"));
 
@@ -87,7 +87,7 @@ const SignIn = () => {
             >
               Sign in
             </Button>
-            <Link to="/signin" className="frLink">
+            <Link to="/" className="frLink">
               Forgot password ?
             </Link>
             <div style={{ margin: "25px" }}>

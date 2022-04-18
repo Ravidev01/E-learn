@@ -130,7 +130,7 @@ const SignUP = () => {
             </Button>
             <div style={{ margin: "25px" }}>
               Do you have an account ?
-              <Link className="sgnLink" to="/signin">
+              <Link className="sgnLink" to="/">
                 Sign In
               </Link>
             </div>

@@ -9,20 +9,20 @@ const Header = () => {
   return (
     <header className='header'>
     <div>
-      <Link className='links' to='/'> eLearn
+      <Link className='links' to='/home'> eLearn
         {/* <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"></img> */}
       </Link>
     </div>
 
     <nav className='navbar'>
       <ul>
-        <Link className='links' to='/'>
+        <Link className='links' to='/home'>
           Home
         </Link>
-        <Link className='links' to='/'>
+        <Link className='links' to='/home'>
           All Courses
         </Link>
-        <Link className='links' to='/signin'>
+        <Link className='links' to='/'>
           Logout
         </Link>
 
