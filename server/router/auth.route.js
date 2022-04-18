@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
 
+
 const bcryptSalt = 10;
 
 const User = require("../module/user.model");
@@ -27,15 +28,10 @@ router.post(
       .custom((value) => {
         return User.findOne({ email: value }).then((user) => {
           if (user) {
-            return Promise.reject("Email in use");
+            return Promise.reject("E-mail already in use");
           }
         });
-        // body('email').custom(value => {
-        //     return User.findOne({value}).then(user => {
-        //       if (user) {
-        //         return Promise.reject('E-mail already in use');
-        //       }
-        //     });
+      
       }),
     body("password")
       .isLength({ min: 4 })
@@ -97,10 +93,11 @@ router.post("/logout", (req, res) => {
   res.status(200).json({ message: "Logout Success!" });
 });
 
-router.get("/loggedIn", (req, res) =>
+router.get("/loggedIn", (req, res) =>{
+console.log(req.isAuthenticated())
   req.isAuthenticated()
     ? res.status(200).json(req.user)
     : res.status(403).json({ message: "Unauthorized" })
-);
+});
 
 module.exports = router;

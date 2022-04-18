@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #16212d;
+  }
+  .navbar{
+    display: flex;
+    align-items: center;
+  }
+
+  .header .links img{
+      width: 60px;
+      height: 20px;
+      background: white;
+  } 
+  
+  .header .links {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .avatarStyle{
+    margin-left: 10px;
+  }

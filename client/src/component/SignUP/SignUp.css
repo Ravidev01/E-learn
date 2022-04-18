@@ -1,0 +1,42 @@
+.paperStyle{
+  padding: 10px;
+  height: auto;
+  width: 370px;
+  margin: 30px auto;
+}
+.avatarStyle {
+  background: #17a7d2;
+}
+.signup {
+  padding: 10px 0 ;
+}
+.errorMessage{
+color: red;
+margin-left: 42%;
+}
+.container .css-1wlk0hk-MuiAvatar-root{
+height: 50px;
+width: 50px;
+}
+
+.textFiled{
+  margin-bottom: 15px !important;
+}
+.btnStyle{
+  margin: 20px 0 9px 0 !important;
+}
+.frLink{
+  margin-bottom: 20px !important ;
+  margin-left: 60%;
+  text-decoration: 0;
+}
+.sgnLink{
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 10px;
+  text-decoration: 0;
+}
+.txtDont{
+  margin-top: 20px;
+  text-align: center;
+}
