@@ -6,7 +6,7 @@ const Course = require ('../module/course.model');
 const{ isLoggedIn , isTeacher , isValidId } = require("../middleware/custom-middleware");
 
 router.get('/sampleCourses',(req,res)=>{
-    Course.aggregate([{$sample:{ size:8}}])
+    Course.aggregate([{$sample:{ size:9}}])
     .then (response=>res.json(response))
     .catch(err => res.status(500).json(err))
 });

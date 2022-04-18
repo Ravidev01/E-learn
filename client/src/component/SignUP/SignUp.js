@@ -12,7 +12,7 @@ import signUpImage from "../../Assets/signUpImage.svg";
 import Select from "@mui/material/Select";
 import axios from "axios";
 
-import "../SignIn/SignIn.css";
+import "../SignUP/SignUp.css"
 
 const SignUP = () => {
   const navigate = useNavigate();
@@ -64,7 +64,7 @@ const SignUP = () => {
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
               <Avatar className="avatarStyle" src={signUpImage} />
-              <h2>Sign up</h2>
+              <h2 className="signup">Sign up</h2>
               <TextField
                 required
                 className="textFiled"

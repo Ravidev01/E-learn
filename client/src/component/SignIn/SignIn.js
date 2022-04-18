@@ -36,7 +36,7 @@ const SignIn = () => {
         if(res.status !== 200){
           setErrorMessage(()=>"Invalid Username or Password!")
         }
-         res.status === 200 && navigate('/home')
+         res.status === 200 && navigate('/')
       })
       .catch((err) => setErrorMessage(()=>"Invalid Username or Password!"));
 
@@ -51,7 +51,7 @@ const SignIn = () => {
           <Paper elevation={20} className="paperStyle">
             <Grid align="center">
               <Avatar className="avatarStyle"src= {loginImage}/>
-              <h2>Sign in</h2>
+              <h2 className="sign">Sign in</h2>
               <TextField required
                 className="textFiled"
                 value={input.username}
