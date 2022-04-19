@@ -3,9 +3,12 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy
 const flash = require("connect-flash");
 const User = require('../module/user.model');
+// require('./config/passport.config')(app)
+
 
 module.exports = app => {
     app.use(require("express-session")({
+        // key:"token",
         secret: "eLearning",
         resave: true,
         saveUninitialized: true

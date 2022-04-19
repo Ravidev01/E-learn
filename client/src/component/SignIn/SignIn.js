@@ -14,6 +14,7 @@ const SignIn = () => {
   const [input, setInput] = useState({ username: "", password: "" });
   const [errorMessage , setErrorMessage] = useState("")
   const handleSubmit = (e) => {
+    localStorage.setItem("Auth",true)
     e.preventDefault();
     console.log(input);
     postData();
