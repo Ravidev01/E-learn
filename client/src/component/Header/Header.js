@@ -23,7 +23,7 @@ const Header = () => {
         <Link className='links' to='/home'>
           Home
         </Link>
-        <Link className='links' to='allcourses'>
+        <Link className='links' to='/allcourses'>
           All Courses
         </Link>
         <Link className='links' onClick={handleLogout} to='/'>
