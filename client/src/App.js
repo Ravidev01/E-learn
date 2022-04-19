@@ -8,6 +8,7 @@ import CourseDetails from './component/CourseDetails/CourseDetails';
 import Header from './component/Header/Header';
 import Footer from './component/Footer/Footer';
 import AllCourses from './component/AllCourses/AllCourses';
+import ProtectedRoute from './component/ProtectedRoute';
 
 
 function App() {
@@ -17,9 +18,11 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn/>}/>
           <Route path="signup" element={<SignUp/>}/>
-          <Route path="/home" element={<> <Header/><HomePage/> <CourseCard/> <Footer/> </>}/>
-          <Route path="course/:id" element={<><Header/> <CourseDetails/></>}/>
-          <Route path="allcourses" element={<><Header/> <AllCourses/></>}/>
+          <Route element={<ProtectedRoute/>}>
+            <Route path="/home" element={<> <Header/><HomePage/> <CourseCard/> <Footer/> </>}/>
+            <Route path="course/:id" element={<><Header/> <CourseDetails/></>}/>
+            <Route path="allcourses" element={<><Header/> <AllCourses/></>}/>
+          </Route>
         </Routes>
       </Router>
       

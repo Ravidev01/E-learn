@@ -6,6 +6,10 @@ import Avatar from "@mui/material/Avatar";
 // import img from "../../Assets/multi1.png"
 
 const Header = () => {
+
+  const handleLogout = ()=>{
+    localStorage.removeItem("Auth");
+  }
   return (
     <header className='header'>
     <div>
@@ -22,7 +26,7 @@ const Header = () => {
         <Link className='links' to='allcourses'>
           All Courses
         </Link>
-        <Link className='links' to='/'>
+        <Link className='links' onClick={handleLogout} to='/'>
           Logout
         </Link>
 
