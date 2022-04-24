@@ -4,7 +4,6 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {addCourse} from '../../features/cartSlice'
 import {useDispatch} from 'react-redux'
 
 const Card = ({ data, id }) => {
@@ -13,10 +12,10 @@ const Card = ({ data, id }) => {
   // console.log(data, "CardData");
 
   const handleClick = () => {
-    dispatch(addCourse(data))
-  //  setTimeout(()=>{ navigate(`/course/id=${data._id}`)},3000) 
+    // dispatch(addCourse(data))
+   setTimeout(()=>{ navigate(`/course/id=${data._id}`)},3000) 
   
-    toast('Course added to cart Successfully! Keep Learning🚀', {
+    toast('Course added Successfully! Keep Learning🚀', {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -43,7 +42,7 @@ const Card = ({ data, id }) => {
           />
           {/* Same as */}
           <ToastContainer />
-      <div className="grid">
+      <div className="grid" key={id}>
         <div>
           <img src={data.imageUrl} alt="destination-1" />
           <h3>
@@ -57,8 +56,7 @@ const Card = ({ data, id }) => {
           }`}</p>
           <h2>{`$ ${data.price}`}</h2>
           <Button className="btn" variant="contained" onClick={handleClick}>
-            Add to cart
-          </Button>
+            buy now          </Button>
         </div>
       </div>
     </section>
