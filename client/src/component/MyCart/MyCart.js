@@ -1,5 +1,5 @@
 import Card from './Card';
-import styles from "../AllCourses/AllCourses.module.css"
+import styles from "./MyCart.module.css"
 import { useSelector } from 'react-redux';
 
 const MyCart = () => {
@@ -7,11 +7,11 @@ const MyCart = () => {
     // const [userData, setUserData] = useState([]);
    
     console.log(course.length, "user data");
-    // if (course.length <= 0 ){
-    //     return(
-    //         <h1>No course added into the cart</h1>
-    //     )
-    // }
+    if (course.length <= 0 ){
+        return(
+            <h1 className={styles.noCourseMessage}>No course added into your cart</h1>
+        )
+    }
     return (
       <div className={styles.cards}>
         <h2>Buy your Course here!</h2>

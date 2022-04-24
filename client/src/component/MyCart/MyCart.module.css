@@ -1,0 +1,24 @@
+.cards h3 {
+    font-size: 20px;
+    padding: 5px;
+    text-align: start;
+  }
+  .cards h2 {
+    font-size: 30px;
+    padding-top: 11px;
+    padding-bottom: 4px;
+    text-align: center;
+  }
+  
+  .cardView {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+.noCourseMessage{
+display: flex;
+justify-content:center;
+align-items: center;
+height: 150px;
+}
