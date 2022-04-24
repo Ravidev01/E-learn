@@ -31,6 +31,7 @@ const SignUP = () => {
     e.preventDefault();
     // console.log(input, role);
     postData();
+
   };
 
   const postData = () => {
@@ -48,7 +49,7 @@ const SignUP = () => {
         )
         .then((res) => {
           console.log(res);
-          res.status === 200 && navigate("/signin");
+          res.status === 200 && navigate("/");
         })
         .catch((err) => console.log(err));
     } catch (err) {
