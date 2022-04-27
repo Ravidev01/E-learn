@@ -4,7 +4,7 @@ import SignIn from './component/SignIn/SignIn';
 import SignUp from './component/SignUP/SignUp';
 import CourseCard from './component/CourseCard/CourseCard';
 import CourseDetails from './component/CourseDetails/CourseDetails';
-import HomePage from './component/Homepage/HomePage.js'
+import HomePage from './component/HomePage/HomePage'
 import Header from './component/Header/Header';
 import Footer from './component/Footer/Footer';
 import AllCourses from './component/AllCourses/AllCourses';
