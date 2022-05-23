@@ -1,6 +1,6 @@
 **Website link**
 
-https://elearnmaster.netlify.app/home
+https://elearnmaster.netlify.app
 
 
 
