@@ -3,8 +3,13 @@
 ![image](https://user-images.githubusercontent.com/87275874/169838561-52bc572b-d16a-4021-8309-dbcef0ec38ef.png)
 
 
+
+
+
 **Sign up Page**
+
 ![image](https://user-images.githubusercontent.com/87275874/169838641-51814dd8-84d6-48f0-980f-557187401554.png)
+
 
 **Home Page**
 
